@@ -78,6 +78,13 @@ a:hover {
 
 }
 /*Navigation Styles*/
+
+header {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+}
+
 .navbar {
     background-color: #C1D2DE; /*#B8CCD9; #A3BCCC; /*#E2EBF1;*/
     height: 15vh;
