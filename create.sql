@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2021-03-06 22:35:00.045
+-- Last modification date: 2021-03-07 04:45:43.933
 
 -- tables
 -- Table: Category
@@ -78,15 +78,16 @@ CREATE TABLE Person_Vaccine (
 
 -- Table: Vaccine_Provider
 CREATE TABLE Vaccine_Provider (
-    provider_id serial  NOT NULL,
+    provider_id int  NOT NULL,
     name varchar(100)  NOT NULL,
-    street_1 varchar(100)  NOT NULL,
-    street_2 varchar(100)  NOT NULL,
+    address varchar(100)  NOT NULL,
+    suite_number int  NULL,
+    address_2 varchar(100)  NULL,
     city varchar(100)  NOT NULL,
     zip int  NOT NULL,
-    state char(2)  NOT NULL,
-    phone varchar(20)  NOT NULL,
-    website varchar(200)  NOT NULL,
+    county varchar(100)  NOT NULL,
+    phone_number varchar(20)  NULL,
+    website varchar(200)  NULL,
     CONSTRAINT Vaccine_Provider_pk PRIMARY KEY (provider_id)
 );
 

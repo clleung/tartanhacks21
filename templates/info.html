@@ -59,8 +59,8 @@
         </div>
     </nav> <!--end nav-->
     <div class = "form container">
-      <h2 class = "text-center">Log In</h2>
-      <form id = "log-in" name = "log-in">
+      <h2 class = "text-center">Account Information</h2>
+      <form id = "log-in" name = "log-in" action="" method="post" onsubmit="">
         <label for = "first_name">First Name:</label><br>
         <input type = "text" id = "first_name" name = "categories"
         required
@@ -121,16 +121,20 @@
           >
         <br>
         <br>
+        <div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="TartanHacks Vaccine Providers" src="https://arcgis.com/apps/Embed/index.html?webmap=81071c446dae4469b162dd1453943bbb&extent=-80.4801,39.6737,-74.7507,42.1107&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=light"></iframe></div>
+        <br>
+        <br>
         <label for = "phone">Phone:</label><br>
         <input type = "tel" id = "phone" name = "categories"
           required
           placeholder = "412-268-2000"
           pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}">
         <br>
-        <br>
-        <input class = "hidden" type="submit" value="Submit" href = "info.html">
-        <a href="info.html" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Submit</a>
+        <br>        
 
+        <input type="submit" value="Submit" href = "info.html">
+        <a href="info.html" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Submit</a>
+        
       </form>
     </div> <!--end form container-->
     
