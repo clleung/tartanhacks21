@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Kyle Yang">
+        <meta name="keywords" content="Vaccine Distribution">
+        <meta name="description" content="Vaccine Distribution">
+        
+        <title>Vaccine Distribution</title>
+    
+        <!-- External Links to CSS files -->
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        <!-- <p>{{output}}</p>
+        <p>{{checked}}</p> -->
+        <div id="container">
+            <form name="myForm" action="" method="post" onsubmit="">
+                <b>Option 1</b><br>
+                <input type="checkbox" name="categories" id="category1" value="1">
+                <label for="category1">1</label><br><br>
+                <input type="checkbox" name="categories" id="category2" value="2">
+                <label for="category2">2</label><br><br>
+                <b>Options 2</b><br>
+                <input type="radio" name="options" id="option1" value="A" required> A <br>
+                <input type="radio" name="options" id="option2" value="B"> B <br><br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        
+        </br>
+        {{option1}}
+        </br>
+        {{option2}}
+    </body>
+</html>
