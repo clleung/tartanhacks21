@@ -35,9 +35,6 @@ Bold 700
 Github:
 https://github.com/logos 
 
-Linkedin:
-https://brand.linkedin.com/downloads
-
 Email:
 <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
@@ -77,6 +74,7 @@ a:hover {
 /*Navigation Styles*/
 .navbar {
     background-color: #C1D2DE; /*#B8CCD9; #A3BCCC; /*#E2EBF1;*/
+    height:10rem;
     padding: 0;
 }
 .nav-item {
