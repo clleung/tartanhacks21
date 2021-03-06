@@ -3,7 +3,6 @@ import sys
 import datetime
 from decimal import Decimal
 from flask import Flask, render_template, Response, request
-import codecs
 
 app=Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
