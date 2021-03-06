@@ -1,3 +1,7 @@
+import psycopg2
+import sys
+import datetime
+from decimal import Decimal
 from flask import Flask, render_template, Response, request
 
 app=Flask(__name__)
@@ -10,6 +14,7 @@ def plot():
     option2 = request.form.getlist('categories')
     if option1 is None:
         option1 = "None picked"
+    
     return render_template('home.html', option1 = option1, option2 = option2)
 
 # No caching at all for API endpoints.
@@ -24,3 +29,15 @@ if __name__ == "__main__":
     import webbrowser
     webbrowser.open("http://127.0.0.1:5000/")
     app.run(debug=False)
+
+    # try:
+    #     db, user = 'phase2', 'isdb'
+    #     if len(sys.argv) >= 2:
+    #         db = sys.argv[1]
+    #     if len(sys.argv) >= 3:
+    #         user = sys.argv[2]
+    #     conn = psycopg2.connect(database=db, user=user)
+    #     conn.autocommit = True
+    #     cur = conn.cursor()
+    # except psycopg2.Error as e:
+    #     print("Unable to open connection: %s" % (e,))
