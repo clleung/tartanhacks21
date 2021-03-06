@@ -13,8 +13,6 @@
         <link rel="stylesheet" href="../static/css/style.css">
     </head>
     <body>
-        <!-- <p>{{output}}</p>
-        <p>{{checked}}</p> -->
         <div id="container">
             <form name="myForm" action="" method="post" onsubmit="">
                 <b>Option 1</b><br>
@@ -22,6 +20,8 @@
                 <label for="category1">1</label><br><br>
                 <input type="checkbox" name="categories" id="category2" value="2">
                 <label for="category2">2</label><br><br>
+                <input type="checkbox" name="categories" id="category3" value="3">
+                <label for="category3">3</label><br><br>
                 <b>Options 2</b><br>
                 <input type="radio" name="options" id="option1" value="A" required> A <br>
                 <input type="radio" name="options" id="option2" value="B"> B <br><br>
@@ -29,9 +29,9 @@
             </form>
         </div>
         
-        </br>
-        {{option1}}
-        </br>
-        {{option2}}
+        <p>Option 1: {{option1}}</p>
+        <p>Option 2: {{option2}}</p>
+        <br>
+        {{output|safe}}
     </body>
 </html>

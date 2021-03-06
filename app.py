@@ -3,6 +3,7 @@ import sys
 import datetime
 from decimal import Decimal
 from flask import Flask, render_template, Response, request
+import codecs
 
 app=Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -10,12 +11,32 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 @app.route('/', methods=['GET','POST'])
 def plot():
     # Read form input
-    option1 = request.form.get('options')
-    option2 = request.form.getlist('categories')
+    option1 = request.form.getlist('categories')
+    option2 = request.form.get('options')
     if option1 is None:
         option1 = "None picked"
     
-    return render_template('home.html', option1 = option1, option2 = option2)
+    output = get_data(option1)
+    return render_template('home.html', option1 = option1, option2 = option2, output = output)
+
+def get_data(indices):
+    #Gets data from database
+    tmpl = '''
+        SELECT *
+          FROM Person;
+    '''
+    cmd = cur.mogrify(tmpl)
+    cur.execute(cmd)
+    rows = cur.fetchall()
+
+    p = "<table><tr><td>ID</td><td>First Name</td><td>Last Name</td></tr>"
+    for row in rows:
+        if str(row[0]) in indices:
+            p = p + "<tr><td>%s</td>"%row[0]
+            p = p + "<td>%s</td>"%row[1]
+            p = p + "<td>%s</td></tr>"%row[2]
+    p = p + "</table>"
+    return p
 
 # No caching at all for API endpoints.
 @app.after_request
@@ -26,18 +47,20 @@ def add_header(response):
     return response
 
 if __name__ == "__main__":
+    try:
+        db, user = 'tartanhacks', 'isdb'
+        if len(sys.argv) >= 2:
+            db = sys.argv[1]
+        if len(sys.argv) >= 3:
+            user = sys.argv[2]
+        conn = psycopg2.connect(database=db, user=user)
+        conn.autocommit = True
+        cur = conn.cursor()
+    except psycopg2.Error as e:
+        print("Unable to open connection: %s" % (e,))
+
     import webbrowser
     webbrowser.open("http://127.0.0.1:5000/")
     app.run(debug=False)
 
-    # try:
-    #     db, user = 'phase2', 'isdb'
-    #     if len(sys.argv) >= 2:
-    #         db = sys.argv[1]
-    #     if len(sys.argv) >= 3:
-    #         user = sys.argv[2]
-    #     conn = psycopg2.connect(database=db, user=user)
-    #     conn.autocommit = True
-    #     cur = conn.cursor()
-    # except psycopg2.Error as e:
-    #     print("Unable to open connection: %s" % (e,))
+    
