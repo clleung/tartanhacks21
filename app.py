@@ -8,6 +8,7 @@ app=Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/', methods=['GET','POST'])
+@app.route('/index.html', methods=['GET','POST'])
 def index():
     # option1 = request.form.getlist('categories')
     return render_template('index.html')
@@ -18,10 +19,10 @@ def login():
 
 @app.route('/info.html', methods=['GET','POST'])
 def info():
-
+    person_info = request.form.getlist('categories')
     return render_template('info.html')
 
-def insert_data():
+def insert_data(values):
     #Gets data from database
     tmpl = '''
         SELECT *
@@ -30,9 +31,7 @@ def insert_data():
     cmd = cur.mogrify(tmpl)
     cur.execute(cmd)
     rows = cur.fetchall()
-
     p = []
-        
     return p
 
 # No caching at all for API endpoints.
