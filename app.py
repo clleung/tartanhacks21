@@ -4,7 +4,7 @@ import datetime
 from decimal import Decimal
 from flask import Flask, render_template, Response, request
 
-conn = psycopg2.connect(dbname="postgres", user="postgres", password="DyingHackers", host="104.198.202.2", port="5432", sslmode="verify-ca", sslrootcert="server-ca.pem", sslcert="client-cert.pem", sslkey="client-key.pem")
+#conn = psycopg2.connect(dbname="postgres", user="postgres", password="DyingHackers", host="104.198.202.2", port="5432", sslmode="verify-ca", sslrootcert="server-ca.pem", sslcert="client-cert.pem", sslkey="client-key.pem")
 
 # app=Flask(__name__)
 # app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
