@@ -218,7 +218,7 @@ input, select {
 input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -232,8 +232,12 @@ input[type=submit]:hover {
 
 .form {
     padding: 10vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color:#2424241a; 
 }
 .text-left {
+
     padding-left: 0;
 }
 .text-right {
