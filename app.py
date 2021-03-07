@@ -19,8 +19,9 @@ def login():
 
 @app.route('/info.html', methods=['GET','POST'])
 def info():
-    output = request.form.getlist('categories')
-    return render_template('info.html', output = output)
+    person_info = request.form.getlist('categories')
+    insert_data(person_info)
+    return render_template('info.html')
 
 def insert_data(values):
     #Gets data from database
