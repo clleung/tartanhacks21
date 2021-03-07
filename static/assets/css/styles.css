@@ -19,27 +19,28 @@ Noto Serif
 @media (max-width: 500px){
     .thumbnail {
     
-        height:62.5px;
+        
         margin-bottom: 8%;
         width: 112.5px;
+        height:auto;
     }
 }
 @media (max-width: 640px){
     .thumbnail {
-    
-        height:200px;
+
         margin-bottom: 8%;
         
         width: 360px;
+        height:auto;
     }
 }
 @media (min-width: 641px){
     .thumbnail {
-    
-        height:250px;
+
         margin-bottom: 8%;
         
         width: 450px;
+        height:auto;
     }
 }
 /*
@@ -73,6 +74,9 @@ body {
 }
 h1,h2,h3{
     font-weight: bold;
+}
+h1{
+    padding: 5vh;
 }
 h2{
     line-height: 2.5rem;
@@ -129,15 +133,15 @@ header {
     text-decoration: line-through;
 }
 .nav-item:hover{
-    background-color: #FED7C6;
+    background-color: #DCD9C3;
 }
 
 
 .brand {
-   
-    font-size: 1.5rem;
+    font-family: 'Noto Serif', serif;
+    font-size: 1.75rem;
     font-weight: 500;
-    letter-spacing: 5px;
+    
 
 }
 
@@ -159,17 +163,21 @@ img.icon {
 
 }
 .top-layer{
-    background-color: #E2E1DC;
-    padding-top: 3%;
+    background-color: #D4D4DB;
+    
 }
 .mid-layer{
-    background-color: #C6C8D9;
+    background-color: #BFC1D8;
 }
 .bot-layer{
     background-color: #AAAFD5;
 }
 /*Interactive Styles*/
 /*Button Styles*/
+.btn{
+    background-color: #5563CA;
+    border-color: #5563CA;
+}
 .btn-lg{
     padding: 1rem 2rem;
 }
@@ -248,7 +256,27 @@ input[type=submit]:hover {
     margin-bottom: 5vh;
     background-color:#2424241a; 
 }
-
+/*Process Styles*/
+.explanation {
+    padding: 6%;
+}
+.summary {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding: 2%;
+    background-color: #C6C8D9;
+}
+/*About Styles*/
+#portait{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+}
+.portrait{
+    padding: 5% 2%;
+    background-color: #E9E7DD;
+}
 /*Development Styles*/
 .hidden{
     visibility: hidden;
@@ -257,3 +285,15 @@ input[type=submit]:hover {
 ArcGIS Styles
 */
 .embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}
+
+/*
+Figma Styles
+*/
+#content {
+        width: 100%;
+        height: auto;
+        min-height: 500px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
