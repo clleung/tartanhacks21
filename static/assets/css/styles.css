@@ -281,6 +281,11 @@ input[type=submit]:hover {
 .hidden{
     visibility: hidden;
 }
+#disclaimer{
+    display: block;
+    text-align: center;
+    padding: 0 8%;
+}
 /*
 ArcGIS Styles
 */

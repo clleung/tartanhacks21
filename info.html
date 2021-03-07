@@ -1,0 +1,176 @@
+
+<!doctype html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name = "description" content="Tartan Hacks2021 Kyle Yang, Leah Walko, Lisa Leung, and Sara Song">
+    <meta name = "keywords" content = "CMU, IS, Information Systems, Carnegie Mellon University,2021, Tartan Hacks, Thx 2021, Kyle Yang, Leah Walko, Lisa Leung, and Sara Song">
+    <meta name = "author" content = "Kyle Yang, Leah Walko, Lisa Leung, and Sara Song">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+
+   
+    <!-- Bootstrap core CSS -->
+    <link href = "static/assets/css/bootstrap.min.css" rel = "stylesheet">
+    
+     <!-- CSS-->
+     <link href = "static/assets/css/styles.css" rel = "stylesheet"> 
+
+    <!-- Javascript-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="static/assets/js/bootstrap.bundle.min.js"></script>
+
+  </head>
+
+<body>
+    
+    <!--navbar adapted from https://getbootstrap.com/docs/4.0/components/navbar/-->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <a class="navbar-brand brand p-4" href="index.html"><img class = "logo" src = "static/assets/images/branding-and-credits/tBigVwLogo.png" alt = "The Vaccine Watch Logo; Designed by Leah Walko (c) 2021"> </a>
+
+      <header> The Vaccine Watch</header>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item p-4">
+            <a class="nav-link " href="#nearby">Nearby</a>
+          </li>
+          <li class="nav-item p-4">
+            <a class="nav-link" href="#types">Types</a>
+          </li>
+          <li class="nav-item p-4">
+            <a class="nav-link" href="process.html">Process</a>
+          </li>
+          <li class="nav-item p-4">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item p-4">
+            <a class="nav-link" href="login.html">Account</a>
+          </li>
+        
+        </ul>
+      </div>
+  </nav> <!--end nav-->
+    <div class = "form container">
+      <div id = "disclaimer">
+        <h3>This version of the site does not have an active connection to our PostgreSQL database. For more details, please run the python file in our <a href = "https://github.com/clleung/tartanhacks21">Github Repository</a></h3>
+      </div>
+      <h2 class = "text-center">Account Information</h2>
+      <form id = "log-in" name = "log-in" action="" method="post" onsubmit="">
+        <label for = "first_name">First Name:</label><br>
+        <input type = "text" id = "first_name" name = "first_name"
+        required
+        placeholder = "Andrew"
+        >
+        <br>
+        <br>
+        <label for = "last_name">Last Name:</label><br>
+        <input type = "text" id = "last_name" name = "last_name"
+        required
+        placeholder = "Carnegie"
+        >
+        <br>
+        <br>
+        <label for = "email">Email:</label><br>
+        <input type = "email" id = "email" name = "categories"
+          required
+          placeholder = "acarnegie@andrew.cmu.edu"
+        >
+        <label for = "birthday">Birth Date:</label><br>
+        <input type = "date" id = "birthday" name = "birthday"
+          required
+          placeholder = "2020-01-01"
+          value = "2020-01-01"
+          min = "1900-01-01"
+          max = "2020-01-01"
+        >
+        <br>
+        <br>
+        <label for = "street_1">Street Address Line 1:</label><br>
+        <input type = "text" id = "street_1" name = "street_1"
+        required
+        placeholder = "5000 Forbes Avenue"
+        >
+        <br>
+        <br>
+        <label for = "street_2">Street Address Line 2:</label><br>
+        <input type = "text" id = "street_2" name = "street_2"
+        >
+        <br>
+        <br>
+        <label for = "city">City:</label><br>
+        <input type = "text" id = "city" name = "city"
+        required
+        placeholder = "Pittsburgh"
+        >
+        <br>
+        <br>
+        <label for = "zip">Zip Code:</label><br>
+        <input type = "number" id = "zip" name = "zip"
+          required
+          placeholder = "15213"
+          min = "00000"
+          max = "99999"
+        >
+        <br>
+        <br>
+        <label for = "state">State:</label><br>
+        <input type = "text" id = "state" name = "state"
+          required
+          placeholder = "PA"
+          maxlength = "2"
+          >
+        <br>
+        <br>
+        <div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="TartanHacks Vaccine Providers" src="https://arcgis.com/apps/Embed/index.html?webmap=81071c446dae4469b162dd1453943bbb&extent=-80.4801,39.6737,-74.7507,42.1107&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=light"></iframe></div>
+        <br>
+        <br>
+        <label for = "phone">Phone:</label><br>
+        <input type = "tel" id = "phone" name = "phone"
+          required
+          placeholder = "412-268-2000"
+          pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <br>
+        <br>        
+
+        <input type="submit" value="Submit" onclick = "window.location.href = 'index.html'">
+        
+      </form>
+    </div> <!--end form container-->
+    
+
+</body>
+<footer class = "text-center">
+  <div class = "top-layer">
+    <h1 class = "brand">The Vaccine Watch</h1>
+    <hr>
+    <p>Kyle Yang, Leah Walko, Lisa Leung, and Sara Song</p>
+    <br>
+    <!--insert icons here-->
+    <a href = "mailto:clleung@andrew.cmu.edu"><img class = "icon" src = "static/assets/images/branding-and-credits/gmail.svg"></a>
+    <a href = "https://github.com/clleung/tartanhacks21"><img class = "icon" src = "static/assets/images/branding-and-credits/GitHub-Mark-120px-plus.png"></a>
+  </div> <!--end top-layer-->
+  <div class = "mid-layer">
+    <p>Hosted on GitHub Pages and made with <a href = "https://getbootstrap.com/docs/4.0/about/license/"><strong>Bootstrap</strong></a>.
+    <br>
+    <br>
+       This site is maintained by <a href = "https://github.com/clleung/tartanhacks21" ><strong>Kyle Yang, Leah Walko, Lisa Leung, and Sara Song</strong></a>. View this project on <a href = "https://github.com/clleung/tartanhacks21"><strong>GitHub</strong></a>.
+    </p>
+    
+  </div> <!--end mid-layer-->
+
+  <div class = "bot-layer">
+    <p>
+      &copy; 2021 Kyle Yang, Leah Walko, Lisa Leung, and Sara Song
+    </p>
+    
+  </div> <!--end bot-layer-->
+</footer>
+</html>
