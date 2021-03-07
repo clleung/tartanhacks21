@@ -19,21 +19,44 @@ def login():
 
 @app.route('/info.html', methods=['GET','POST'])
 def info():
-    person_info = request.form.getlist('categories')
-    insert_data(person_info)
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
+    # email = request.form.get('email')
+    # password = request.form.get('password')
+    email = "filler@gmail.com"
+    password = "password"
+    birthday = request.form.get('birthday')
+    street_1 = request.form.get('street_1')
+    street_2 = request.form.get('street_2')
+    city = request.form.get('city')
+    state = request.form.get('state')
+    zip = request.form.get('zip')
+    insert_data(first_name, last_name, email, password, birthday, street_1, street_2, city, state, zip)
     return render_template('info.html')
 
-def insert_data(values):
-    #Gets data from database
-    tmpl = '''
-        SELECT *
-          FROM Person;
+def new_person_id():
+    id_tmpl = '''
+        SELECT person_id
+          FROM Person
+         ORDER BY person_id DESC
+         LIMIT 1;
     '''
-    cmd = cur.mogrify(tmpl)
+    cmd = cur.mogrify(id_tmpl)
     cur.execute(cmd)
-    rows = cur.fetchall()
-    p = []
-    return p
+    ids = cur.fetchone()
+    for id in ids:
+        return id+1
+
+def insert_data(first_name, last_name, email, password, birthday, street_1, street_2, city, state, zip):
+    #Gets data from database
+    if first_name:
+        insert_tmpl = '''
+            INSERT INTO Person(person_id, first_name, last_name, email, password, birthday, street_1, street_2, city, state, zip)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        '''
+        new_id = new_person_id()
+        cmd = cur.mogrify(insert_tmpl,(new_id, first_name, last_name, email, password, birthday, street_1, street_2, city, state, zip))
+        cur.execute(cmd)
 
 # No caching at all for API endpoints.
 @app.after_request
