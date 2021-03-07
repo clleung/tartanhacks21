@@ -1,4 +1,8 @@
 
+tBigVwLogo.png
+The Vaccine Watch Logo; Designed by Leah Walko (c) 2021
+
+
 index.html carousel images
 ____________________________
 pexels-belle-co-1000445.jpg
@@ -12,3 +16,7 @@ Photo by Helena Lopes from Pexels
 pexels-marcin-dampc-1684187.jpg
 crowds of people throwing around paint powder to celebrate
 Photo by Marcin Dampc from Pexels
+
+pexels-annam-w-1047442.jpg
+concert with red and orange lights
+Photo by anna-m. w. from Pexels
