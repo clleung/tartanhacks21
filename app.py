@@ -8,17 +8,20 @@ app=Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/', methods=['GET','POST'])
-def plot():
-    # Read form input
-    option1 = request.form.getlist('categories')
-    option2 = request.form.get('options')
-    if option1 is None:
-        option1 = "None picked"
-    
-    output = get_data()
+def index():
+    # option1 = request.form.getlist('categories')
     return render_template('index.html')
 
-def get_data():
+@app.route('/login.html', methods=['GET','POST'])
+def login():
+    return render_template('login.html')
+
+@app.route('/info.html', methods=['GET','POST'])
+def info():
+
+    return render_template('info.html')
+
+def insert_data():
     #Gets data from database
     tmpl = '''
         SELECT *
@@ -28,13 +31,8 @@ def get_data():
     cur.execute(cmd)
     rows = cur.fetchall()
 
-    p = "<table><tr><td>ID</td><td>First Name</td><td>Last Name</td></tr>"
-    for row in rows:
-        # if str(row[0]) in indices:
-        p = p + "<tr><td>%s</td>"%row[0]
-        p = p + "<td>%s</td>"%row[1]
-        p = p + "<td>%s</td></tr>"%row[2]
-    p = p + "</table>"
+    p = []
+        
     return p
 
 # No caching at all for API endpoints.
