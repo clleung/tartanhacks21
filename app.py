@@ -2,7 +2,7 @@ import psycopg2
 import sys
 import datetime
 from decimal import Decimal
-from flask import Flask, render_template, Response, request
+from flask import Flask, render_template, Response, request, redirect
 
 app=Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -19,8 +19,8 @@ def login():
 
 @app.route('/info.html', methods=['GET','POST'])
 def info():
-    person_info = request.form.getlist('categories')
-    return render_template('info.html')
+    output = request.form.getlist('categories')
+    return render_template('info.html', output = output)
 
 def insert_data(values):
     #Gets data from database

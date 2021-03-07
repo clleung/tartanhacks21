@@ -58,7 +58,7 @@
     </nav> <!--end nav-->
     <div class = "form container">
       <h2 class = "text-center">Account Information</h2>
-      <form id = "log-in" name = "log-in">
+      <form id = "log-in" name = "log-in" action="" method="post" onsubmit="">
         <label for = "first_name">First Name:</label><br>
         <input type = "text" id = "first_name" name = "categories"
         required
@@ -128,10 +128,12 @@
           placeholder = "412-268-2000"
           pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}">
         <br>
-        <br>
-        <input class = "hidden" type="submit" value="Submit" href = "info.html">
-        <a href="info.html" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Submit</a>
+        <br>        
 
+        <input type="submit" value="Submit" href = "info.html">
+        <a href="info.html" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Submit</a>
+        
+        {{output}}
       </form>
     </div> <!--end form container-->
     
