@@ -16,8 +16,6 @@ def plot():
         option1 = "None picked"
     
     output = get_data()
-    # return render_template('home.html', option1 = option1, option2 = option2, output = output)
-    # return render_template('index.html',output = output)
     return render_template('index.html')
 
 def get_data():

@@ -12,16 +12,16 @@
 
    
     <!-- Bootstrap core CSS -->
-    <link href = "assets/css/bootstrap.min.css" rel = "stylesheet">
+    <link href = "../static/assets/css/bootstrap.min.css" rel = "stylesheet">
     
      <!-- CSS-->
-     <link href = "assets/css/styles.css" rel = "stylesheet"> 
+     <link href = "../static/assets/css/styles.css" rel = "stylesheet"> 
 
     <!-- Javascript-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/assets/js/bootstrap.bundle.min.js"></script>
 
   </head>
 
@@ -29,7 +29,7 @@
   
     <!--navbar adapted from https://getbootstrap.com/docs/4.0/components/navbar/-->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light">
-        <a class="navbar-brand brand p-4" href="index.html"><img class = "logo" src = "assets/images/branding-and-credits/tBigVwLogo.png" alt = "The Vaccine Watch Logo; Designed by Leah Walko (c) 2021"> The Vaccine Watch</a>
+        <a class="navbar-brand brand p-4" href="index.html"><img class = "logo" src = "../static/assets/images/branding-and-credits/tBigVwLogo.png" alt = "The Vaccine Watch Logo; Designed by Leah Walko (c) 2021"> The Vaccine Watch</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -56,26 +56,43 @@
           </ul>
         </div>
     </nav> <!--end nav-->
-    <form>
-        
-    </form>
+    <div class = "form container">
+      <h2 class = "text-center">Log In</h2>
+      <form id = "log-in" name = "log-in">
+        <label for = "email">Email:</label>
+        <input type = "text" id = "email" name = "categories">
+        <br>
+        <br>
+        <label for = "password">Password:</label>
+        <input type = "text" id = "password" name = "categories">
+        <br>
+        <br>
+        <br>
+        <input class = "hidden" type="submit" value="Submit" href = "info.html">
+        <div class = " container">
+          <div class = "row">
+            <div class ="text-left col">
+              <a href="info.html" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Register</a>
+       
+            </div>
+            <div class ="text-right col">
+              <a href="info.html" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Submit</a>
+       
+            </div>
+          </div>
+          
+        </div>
+        </form>
+    </div> <!--end form container-->
 
-    <div class = "intro text-center">
- 
-    </div> <!--end intro-->
-  
-    <hr>
-    
-    
-    
 </body>
 <footer class = "text-center">
   <div class = "top-layer">
     <h1 class = "brand">The Vaccine Watch</h1>
     <hr>
     <!--insert icons here-->
-    <a href = "mailto:clleung@andrew.cmu.edu"><img class = "icon" src = "assets/images/branding-and-credits/gmail.svg"></a>
-    <a href = "https://github.com/clleung/tartanhacks21"><img class = "icon" src = "assets/images/branding-and-credits/GitHub-Mark-120px-plus.png"></a>
+    <a href = "mailto:clleung@andrew.cmu.edu"><img class = "icon" src = "../static/assets/images/branding-and-credits/gmail.svg"></a>
+    <a href = "https://github.com/clleung/tartanhacks21"><img class = "icon" src = "../static/assets/images/branding-and-credits/GitHub-Mark-120px-plus.png"></a>
   </div> <!--end top-layer-->
   <div class = "mid-layer">
     <p>Hosted on GitHub Pages and made with <a href = "https://getbootstrap.com/docs/4.0/about/license/"><strong>Bootstrap</strong></a>.
