@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 /*
 DM Sans
 Regular 400
 Medium 500
 Bold 700
+
+Noto Sans JP
+100
+400
+500
+700
+
+Noto Serif
+400
 */
 @media (max-width: 500px){
     .thumbnail {
@@ -46,13 +57,22 @@ Styles
 1. General Styles
 
 2. Navigation Styles
+
+3. Footer Styles 
+
+4. Interactive Styles
+   4.1 Button Styles
+   4.2 Carousel Styles
 */
 body {
     background-color: #F8F8F8;
-    color: #041520;
-    font-family: 'DM Sans', sans-serif;
+    color: #333333;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 1rem;
     line-height: 1.6rem;
+}
+h1,h2,h3{
+    font-weight: bold;
 }
 h2{
     line-height: 2.5rem;
@@ -68,7 +88,7 @@ a {
 }
 a:hover {
     text-decoration: none;
-    color: #3D7499;
+    color: #BB7272;
 
 }
 .logo {
@@ -77,34 +97,44 @@ a:hover {
     height: auto;
 
 }
+.text-left {
+
+    padding-left: 0;
+}
+.text-right {
+    padding-right: 0;
+}
+
 /*Navigation Styles*/
 
 header {
+    font-family: 'Noto Serif', serif;
     font-size: 2rem;
     font-weight: 400;
-    letter-spacing: 2.5px;
+  
 }
 
 .navbar {
-    background-color: #C1D2DE; /*#B8CCD9; #A3BCCC; /*#E2EBF1;*/
+    background-color: #FEFAE0;
     height: 15vh;
     padding: 0;
 }
 .nav-item {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 400;
-    letter-spacing: 2.5px;
+    
 }
 
 .active{
     text-decoration: line-through;
 }
 .nav-item:hover{
-    background-color: #E4ECF1;
+    background-color: #FED7C6;
 }
 
 
 .brand {
+   
     font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 5px;
@@ -113,23 +143,12 @@ header {
 
 
 
-.intro {
-    padding: 50px 0px 15px;
-}
-.blurb {
-    width: 50%;
-}
 hr {
     width: 45%;
     background-color: #041520;
 }
-.projects {
-    margin-top: 3%;
-    margin-bottom: 1%;
-    max-width: 75%;
-}
 
-
+/*Footer Styles*/
 img.icon {
     margin: 1% 1%;
     width: 2.5rem;
@@ -140,22 +159,22 @@ img.icon {
 
 }
 .top-layer{
-    background-color: #E4ECF1;
+    background-color: #E2E1DC;
     padding-top: 3%;
 }
 .mid-layer{
-    background-color: #D3DFE7;
+    background-color: #C6C8D9;
 }
 .bot-layer{
-    background-color: #C1D2DE;
+    background-color: #AAAFD5;
+}
+/*Interactive Styles*/
+/*Button Styles*/
+.btn-lg{
+    padding: 1rem 2rem;
 }
 
-.about{
-    width: 40%;
-}
-.headshot{
-    margin: 1%;
-}
+/*Carousel Styles*/
 #carouselExampleIndicators {
     max-width: 100%;
     height: auto;
@@ -179,27 +198,12 @@ img.icon {
     overflow: hidden;
   }
 
-
-.summary{
-    max-width: 50%;
-    
-}
-.work{
-    margin-top: 2rem;
-}
-
-
 #carousel-fit-image{
     width: 100vw;
     height: 85vh;
     object-fit: cover;
     overflow: hidden;
 }
-
-.hidden{
-    visibility: hidden;
-}
-
 .carousel-caption{
     /*changed from 20px in Bootstrap*/
     top: 25%;
@@ -207,10 +211,11 @@ img.icon {
     
 .carousel-button{
     margin-top: 30vh;
+    background-color: #5563CA;
+    border-color: #5563CA;
+    color: #FEFAE0;
 }
-.btn-lg{
-    padding: 1rem 2rem;
-}
+/*Form Styles*/
 input, select {
     width: 100%;
     padding: 12px 20px;
@@ -243,14 +248,11 @@ input[type=submit]:hover {
     margin-bottom: 5vh;
     background-color:#2424241a; 
 }
-.text-left {
 
-    padding-left: 0;
+/*Development Styles*/
+.hidden{
+    visibility: hidden;
 }
-.text-right {
-    padding-right: 0;
-}
-
 /*
 ArcGIS Styles
 */
