@@ -2,42 +2,61 @@ import psycopg2
 import sys
 import datetime
 from decimal import Decimal
-from flask import Flask, render_template, Response, request
+from flask import Flask, render_template, Response, request, redirect
 
 app=Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/', methods=['GET','POST'])
-def plot():
-    # Read form input
-    option1 = request.form.getlist('categories')
-    option2 = request.form.get('options')
-    if option1 is None:
-        option1 = "None picked"
-    
-    output = get_data()
-    # return render_template('home.html', option1 = option1, option2 = option2, output = output)
-    # return render_template('index.html',output = output)
+@app.route('/index.html', methods=['GET','POST'])
+def index():
+    # option1 = request.form.getlist('categories')
     return render_template('index.html')
 
-def get_data():
-    #Gets data from database
-    tmpl = '''
-        SELECT *
-          FROM Person;
-    '''
-    cmd = cur.mogrify(tmpl)
-    cur.execute(cmd)
-    rows = cur.fetchall()
+@app.route('/login.html', methods=['GET','POST'])
+def login():
+    return render_template('login.html')
 
-    p = "<table><tr><td>ID</td><td>First Name</td><td>Last Name</td></tr>"
-    for row in rows:
-        # if str(row[0]) in indices:
-        p = p + "<tr><td>%s</td>"%row[0]
-        p = p + "<td>%s</td>"%row[1]
-        p = p + "<td>%s</td></tr>"%row[2]
-    p = p + "</table>"
-    return p
+@app.route('/info.html', methods=['GET','POST'])
+def info():
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
+    # email = request.form.get('email')
+    # password = request.form.get('password')
+    email = "filler@gmail.com"
+    password = "password"
+    birthday = request.form.get('birthday')
+    street_1 = request.form.get('street_1')
+    street_2 = request.form.get('street_2')
+    city = request.form.get('city')
+    state = request.form.get('state')
+    zip = request.form.get('zip')
+    insert_data(first_name, last_name, email, password, birthday, street_1, street_2, city, state, zip)
+    return render_template('info.html')
+
+def new_person_id():
+    id_tmpl = '''
+        SELECT person_id
+          FROM Person
+         ORDER BY person_id DESC
+         LIMIT 1;
+    '''
+    cmd = cur.mogrify(id_tmpl)
+    cur.execute(cmd)
+    ids = cur.fetchone()
+    for id in ids:
+        return id+1
+
+def insert_data(first_name, last_name, email, password, birthday, street_1, street_2, city, state, zip):
+    #Gets data from database
+    if first_name:
+        insert_tmpl = '''
+            INSERT INTO Person(person_id, first_name, last_name, email, password, birthday, street_1, street_2, city, state, zip)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        '''
+        new_id = new_person_id()
+        cmd = cur.mogrify(insert_tmpl,(new_id, first_name, last_name, email, password, birthday, street_1, street_2, city, state, zip))
+        cur.execute(cmd)
 
 # No caching at all for API endpoints.
 @app.after_request
